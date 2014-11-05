@@ -1,0 +1,27 @@
+#exportPattern("^[[:alpha:]]+")
+exportMethods(
+    plot.PointAttribute,
+    plot.PolyLineAttribute,
+    Watershed.Order,
+    Watershed.Order2,
+    Watershed.Tributary 
+)
+exportClasses(
+    Watershed 
+)
+export(
+	RiverStation, 
+	SpDF_Subset,
+	SpDF_Touch,
+	Watershed.IOR1,
+	Watershed.IOR2,
+	Watershed.IOR3,	
+	Watershed.IOR4
+	)
+	
+import(methods)
+import(lattice)
+import(maptools)
+import(rgeos)
+import(splancs)
+import(sp)
