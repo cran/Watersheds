@@ -1,4 +1,4 @@
-# By: J.A. Torres
+# By: J.A. Torres-Matallana
 # 05.07.2012
 # Institute for Geoinformatics (ifgi) 
 # University of Muenster, Germany

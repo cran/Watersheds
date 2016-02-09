@@ -4,7 +4,7 @@
 #	nodeIO
 #	riverIO
 #	length(riverIO)
-# check código para eliminar closer and closerelev, it are not necessary
+# check code for eliminating closer and closerelev, maybe them are not necessary
 Watershed.IOR3 = function(x, y, dist){
 	nodeIO = x; nodeIO
 	riverIO = y; riverIO

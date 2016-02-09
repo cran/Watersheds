@@ -17,11 +17,14 @@
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \title{\bf "Watersheds": Spatial watershed aggregation and spatial drainage network analysis}
-\author{Jairo A. Torres\\
-{\small \it Institute for Geoinformatics, University of Münster, Münster, Germany}\\
-\small arturo.torres@uni-muenster.de}
+\author{Jairo A. Torres-Matallana\\
+{\small \it Water Security and Safety Unit, Department for Environmental Research and
+    Innovation}\\
+{\small \it Luxembourg Institute of Science and Technology (LIST), Belvaux, Luxembourg}\\
+\small arturo.torres@list.lu}
 \maketitle
 
 % --------------------- question 1 ------------------------------

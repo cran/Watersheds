@@ -1,4 +1,7 @@
 #exportPattern("^[[:alpha:]]+")
+S3method(plot, PointAttribute)
+S3method(plot, PolyLineAttribute)
+
 exportMethods(
     plot.PointAttribute,
     plot.PolyLineAttribute,
@@ -25,3 +28,5 @@ import(maptools)
 import(rgeos)
 import(splancs)
 import(sp)
+
+importFrom("graphics", "text")

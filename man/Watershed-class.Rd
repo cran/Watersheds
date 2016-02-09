@@ -32,7 +32,7 @@ Objects can be created by calls of the form \code{new("Watershed", ...)}.
 \references{
 European Environment Agency - EAA. (2012). EEA catchments and rivers network system, ECRINS v1.1. rationales, building and improving for widening uses to Water Accounts and WISE applications (EEA Technical report No. 7/2012). (Luxembourg: Publications Office of the European Union).}
 \author{
-J.A. Torres
+J.A. Torres-Matallana
 }
 %\note{
 %%  ~~further notes~~

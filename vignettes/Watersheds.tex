@@ -1,0 +1,83 @@
+
+\documentclass{article}
+% \VignetteIndexEntry{Watersheds, an R Package}
+% \VignetteDepends{Watersheds}
+% \VignetteKeyword{Watersheds}
+
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage[tableposition=top]{caption}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3.0cm, bottom=2.5cm, left=3.0cm, right=3.0cm]{geometry} %define margins
+\usepackage{apacite}	%it allows APA references style
+\bibliographystyle{apacite}
+	\renewcommand{\bibliographytypesize}{\footnotesize}
+\usepackage{amsfonts}
+
+
+\usepackage{Sweave}
+\begin{document}
+\input{Watersheds-concordance}
+
+\title{\bf "Watersheds": Spatial watershed aggregation and spatial drainage network analysis}
+\author{Jairo A. Torres-Matallana\\
+{\small \it Water Security and Safety Unit, Department for Environmental Research and
+    Innovation}\\
+{\small \it Luxembourg Institute of Science and Technology (LIST), Belvaux, Luxembourg}\\
+\small arturo.torres@list.lu}
+\maketitle
+
+% --------------------- question 1 ------------------------------
+% cdir="/Users/Arturo/Desktop/writesummary/vignettes"
+
+\section{Introduction}
+
+The present document has the purpose of illustrating the package {\tt Watersheds} implemented in the programming language {\sf R} Project for Statistical Computing \cite{Ihaka&Gentleman(1996), RDCoreTeam(2013)}.\\
+
+The package allows spatial analysis for watersheds aggregation and ordering accordingly to an outlet point and size of tributary watershed of the current watershed. Also, enables spatial drainage networks analysis inside the aggregated watersheds. It makes use of the functionalities of the spatial classes, functions and methods of the package {\tt sp} \cite{Pebesma&Bivand(2012)}.\\
+
+Creation and handling of objects class {\tt Watershed} for identifying the subbasin that contains the current {\tt station} (class {\tt SpatialPoints}) and subsets the {\tt zhyd} object to subbasin and extract the current {\tt zhy} object that contains {\tt station} via the S4 method {\tt Watershed.Order}. Identification of the inlet and outlet stretches and inlet and outlet nodes of the {\tt zhyd}. Implementation of functions {\tt Watershed. ,IOR1, IOR2, IOR3}, and {\tt IOR4} for determining the actual inlet and outlet nodes.  S4 methods {\tt Watershed.Order2} and {\tt Watershed.Tributary} for defining tributary nodes and tributary catchments of the current {\tt zhyd} watershed.
+
+\section{The data: river Weser basin, Germany}
+
+The package has an example dataset of the ECRINS database for the river Weser basin, Germany. The European Environment Agency (EEA) has been developed the Catchments and Rivers Network System (ECRINS) version 1.1. The ECRINS is the hydrographical system currently in use at the European level as well as widely serving as the reference system for the Water Information System (WISE). The current version of ECRINS is based on previous work carried out by the Joint Research Centre (JRC) Catchment Characterisation and Modelling (CCM) and the EEA (European Lakes, Dams and Reservoirs Database (Eldred2), European Rivers and Catchments (ERICA)), \cite{EEA(2012)}.
+
+\subsection{Subsets}
+
+The dataset contains the following subsets:
+\begin{itemize}
+\item {\tt basin}: an object {\tt SpatialPolygonsDataFrame} as is defined in package {\tt sp} that represents the river Weser basin. The {\tt data} slot contains 6 variables as attributes of 1 observation.\\
+	
+\item {\tt ctry}: an object {\tt SpatialPolygonsDataFrame} as is defined in package {\tt sp} that represents the administrative boundary of Germany. The {\tt data} slot contains 6 variables as attributes of 1 observation.\\
+	
+\item {\tt node:} an object {\tt SpatialPointsDataFrame} as is defined in package {\tt sp} that represents the nodes of the ECRINS river network of the river Weser basin. The {\tt data} slot contains 13 variables as attributes of 3882 observations.\\
+	
+\item {\tt rAller} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Aller, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 88 observations.\\
+	
+\item {\tt rDiemel} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Diemel, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 39 observations.\\
+	
+\item {\tt rFulda} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Fulda, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 82 observations.\\
+	
+\item {\tt rHunte} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Hunte, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 34 observations.\\
+	
+\item {\tt river} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the ECRINS river network of the river Weser basin. The {\tt data} slot contains 52 variables as attributes of 3874 observations.\\
+	
+\item {\tt rWerra} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Werra, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 120 observations.\\
+
+\item {\tt rWeser} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Weser. The {\tt data} slot contains 74 variables as attributes of 104 observations.\\
+
+\item {\tt rWiumme} an object {\tt SpatialLinesDataFrame} as is defined in package {\tt sp} that represents the basin of the river Wiumme, a major tributary of the river Weser. The {\tt data} slot contains 74 variables as attributes of 18 observations.\\
+
+\item {\tt station} an object {\tt SpatialPoints} as is defined in package {\tt sp} that represents a point of interest for which the watershed will be aggregated an ordered. Could be a point with the coordinates of a measurement station.\\
+
+\item {\tt subbasin} an object {\tt SpatialPolygonsDataFrame} as is defined in package {\tt sp} that represents the subbasins of the tributaries of the river Weser. The {\tt data} slot contains 4 variables as attributes of 4 observations.\\
+
+\item {\tt zhyd} an object {\tt SpatialPolygonsDataFrame} as is defined in package {\tt sp} that contains the primary hydrological units of the river Weser basin accordingly with ECRINS. The {\tt data} slot contains 50 variables as attributes and 915 observations.\\
+\end{itemize}
+
+Some examples for visualising the dataset are presented as follows:
+
+\begin{Schunk}
+\begin{Sinput}
+> 	library(Watersheds)

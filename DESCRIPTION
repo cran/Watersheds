@@ -2,14 +2,14 @@ Package: Watersheds
 Type: Package
 Title: Spatial Watershed Aggregation and Spatial Drainage Network
         Analysis
-Version: 1.0
-Date: 2013-08-10
-Author: J.A. Torres
-Maintainer: J. A. Torres <arturo.torres@uni-muenster.de>
+Version: 1.1
+Date: 2016-02-08
+Author: J.A. Torres-Matallana
+Maintainer: J. A. Torres-Matallana <arturo.torres@list.lu>
 Description: Methods for watersheds aggregation and spatial drainage network analysis.
 License: GPL (>= 2)
 Depends: R (>= 2.10), methods, sp, maptools, rgeos, lattice, splancs
-Packaged: 2014-11-05 14:03:40 UTC; j_mata01
+Packaged: 2016-02-08 14:03:40 UTC; arturo.torres
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2014-11-05 20:25:43
+Date/Publication: 2016-02-09 14:36:29
